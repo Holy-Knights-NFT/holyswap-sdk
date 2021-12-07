@@ -1,5 +1,5 @@
-import { BENTOBOX_ADDRESS, STOP_LIMIT_ORDER_ADDRESS } from '../constants'
-import { bentoTypes, name, types } from '../types'
+import { PANDORA_ADDRESS, STOP_LIMIT_ORDER_ADDRESS } from '../constants'
+import { pandoraTypes, name, types } from '../types'
 
 import { ChainId } from '../enums'
 import { SigningKey } from '@ethersproject/signing-key'
@@ -27,7 +27,7 @@ export interface Message {
   oracleData: string
 }
 
-export interface BentoApprovalMessage {
+export interface PandoraApprovalMessage {
   warning: string
   user: string
   masterContract: string
@@ -53,14 +53,14 @@ export const getTypedData = (message: Message, chainId: ChainId) => {
   return { types, primaryType: 'LimitOrder', domain, message }
 }
 
-export const getTypedDataBento = (message: BentoApprovalMessage, chainId: ChainId) => {
+export const getTypedDataPandora = (message: PandoraApprovalMessage, chainId: ChainId) => {
   let domain: Domain = {
-    name: 'BentoBox V1',
+    name: 'Pandora V1',
     chainId: chainId,
-    verifyingContract: BENTOBOX_ADDRESS[chainId]
+    verifyingContract: PANDORA_ADDRESS[chainId]
   }
   return {
-    types: bentoTypes,
+    types: pandoraTypes,
     primaryType: 'SetMasterContractApproval',
     domain,
     message
@@ -90,29 +90,29 @@ export const getSignatureWithProvider = async (
   return { v, r, s }
 }
 
-export const getSignatureWithProviderBentobox = async (
-  message: BentoApprovalMessage,
+export const getSignatureWithProviderPandora = async (
+  message: PandoraApprovalMessage,
   chainId: ChainId,
   provider: Web3Provider
 ): Promise<{ v: number; r: string; s: string }> => {
-  const typedData = getTypedDataBento(message, chainId)
+  const typedData = getTypedDataPandora(message, chainId)
   const signature = await provider.send('eth_signTypedData_v4', [message.user, JSON.stringify(typedData)])
   const { v, r, s } = splitSignature(signature)
   return { v, r, s }
 }
 
-export const getSignatureBento = async (bentoApproval: BentoApprovalMessage, chainId: ChainId, privateKey: string) => {
+export const getSignaturePandora = async (pandoraApproval: PandoraApprovalMessage, chainId: ChainId, privateKey: string) => {
   let domain: Domain = {
-    name: 'BentoBox V1',
+    name: 'Pandora V1',
     chainId: chainId,
-    verifyingContract: BENTOBOX_ADDRESS[chainId]
+    verifyingContract: PANDORA_ADDRESS[chainId]
   }
   return sign(
     {
-      types: bentoTypes,
+      types: pandoraTypes,
       primaryType: 'SetMasterContractApproval',
       domain,
-      message: bentoApproval
+      message: pandoraApproval
     },
     privateKey
   )

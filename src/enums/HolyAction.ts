@@ -1,4 +1,4 @@
-export enum KashiAction {
+export enum HolyAction {
   ADD_ASSET = 1,
   REPAY = 2,
   REMOVE_ASSET = 3,
@@ -12,13 +12,13 @@ export enum KashiAction {
   ADD_COLLATERAL = 10,
   UPDATE_EXCHANGE_RATE = 11,
 
-  // Function on BentoBox
-  BENTO_DEPOSIT = 20,
-  BENTO_WITHDRAW = 21,
-  BENTO_TRANSFER = 22,
-  BENTO_TRANSFER_MULTIPLE = 23,
-  BENTO_SETAPPROVAL = 24,
+  // Function on Pandora
+  PANDORA_DEPOSIT = 20,
+  PANDORA_WITHDRAW = 21,
+  PANDORA_TRANSFER = 22,
+  PANDORA_TRANSFER_MULTIPLE = 23,
+  PANDORA_SETAPPROVAL = 24,
 
-  // Any external call (except to BentoBox)
+  // Any external call (except to Pandora)
   CALL = 30
 }

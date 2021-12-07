@@ -14,14 +14,14 @@ export const ACTION_ACCRUE = 8
 export const ACTION_ADD_COLLATERAL = 10
 export const ACTION_UPDATE_EXCHANGE_RATE = 11
 
-// Function on BentoBox
-export const ACTION_BENTO_DEPOSIT = 20
-export const ACTION_BENTO_WITHDRAW = 21
-export const ACTION_BENTO_TRANSFER = 22
-export const ACTION_BENTO_TRANSFER_MULTIPLE = 23
-export const ACTION_BENTO_SETAPPROVAL = 24
+// Function on Pandora
+export const ACTION_PANDORA_DEPOSIT = 20
+export const ACTION_PANDORA_WITHDRAW = 21
+export const ACTION_PANDORA_TRANSFER = 22
+export const ACTION_PANDORA_TRANSFER_MULTIPLE = 23
+export const ACTION_PANDORA_SETAPPROVAL = 24
 
-// Any external call (except to BentoBox)
+// Any external call (except to Pandora)
 export const ACTION_CALL = 30
 
 export const MINIMUM_TARGET_UTILIZATION = BigNumber.from('700000000000000000') // 70%
