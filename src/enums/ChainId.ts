@@ -5,7 +5,7 @@ export enum ChainId {
   GÖRLI = 5,
   KOVAN = 42,
   MATIC = 137,
-  MATIC_TESTNET = 80001,
+  MATIC_TESTNET = 80001, 
   FANTOM = 250,
   FANTOM_TESTNET = 4002,
   XDAI = 100,
@@ -26,5 +26,7 @@ export enum ChainId {
   PALM = 11297108109,
   PALM_TESTNET = 11297108099,
   MOONRIVER = 1285,
-  FUSE = 122
+  FUSE = 122,
+  COINEX = 52,
+  COINEX_TESTNET = 53
 }
