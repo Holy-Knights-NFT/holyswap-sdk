@@ -51,3 +51,14 @@ Time:        5.091s
 Ran all test suites.
 ✨  Done in 6.61s.
 ```
+
+### Network
+
+* FANTOM_TESTNET
+* MATIC_TESTNET
+* BSC_TESTNET
+* AVALANCHE_TESTNET
+* HECO_TESTNET
+* OKEX_TESTNET
+* COINEX_TESTNET
+
