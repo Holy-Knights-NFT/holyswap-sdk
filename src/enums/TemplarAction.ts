@@ -1,4 +1,4 @@
-export enum HolyAction {
+export enum TemplarAction {
   ADD_ASSET = 1,
   REPAY = 2,
   REMOVE_ASSET = 3,

@@ -1,6 +1,6 @@
 export { ChainId } from './ChainId'
 export { Rounding } from './Rounding'
 export { TradeType } from './TradeType'
-export { HolyAction } from './HolyAction'
+export { TemplarAction } from './TemplarAction'
 export { Fee } from './Fee'
 export { OrderStatus } from './OrderStatus'

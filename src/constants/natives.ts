@@ -11,7 +11,8 @@ import {
   Movr,
   Okex,
   Palm,
-  xDai
+  xDai,
+  CoinEx
 } from '../entities/Native'
 
 import { ChainId } from '../enums'
@@ -42,5 +43,7 @@ export const NATIVE = {
   [ChainId.CELO]: Celo.onChain(ChainId.CELO),
   [ChainId.PALM]: Palm.onChain(ChainId.PALM),
   [ChainId.MOONRIVER]: Movr.onChain(ChainId.MOONRIVER),
-  [ChainId.FUSE]: Fuse.onChain(ChainId.FUSE)
+  [ChainId.FUSE]: Fuse.onChain(ChainId.FUSE),
+  [ChainId.COINEX]: CoinEx.onChain(ChainId.COINEX),
+  [ChainId.COINEX_TESTNET]: CoinEx.onChain(ChainId.COINEX_TESTNET)
 }
